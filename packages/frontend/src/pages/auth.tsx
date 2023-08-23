@@ -4,7 +4,7 @@ import { FcGoogle } from 'react-icons/fc';
 import axios from 'axios';
 import { signIn } from 'next-auth/react';
 
-import Input from '../components/Input';
+import FormInput from '../components/FormInput';
 
 export default function Auth() {
   const [email, setEmail] = useState('');
@@ -57,7 +57,7 @@ export default function Auth() {
             </h2>
             <div className="flex flex-col gap-4">
               {variant === 'register' && (
-                <Input
+                <FormInput
                   label="Username"
                   onChange={(event: any) => setName(event.target.value)}
                   id="username"
@@ -65,14 +65,14 @@ export default function Auth() {
                   value={name}
                 />
               )}
-              <Input
+              <FormInput
                 label="Email"
                 onChange={(event: any) => setEmail(event.target.value)}
                 id="email"
                 type="email"
                 value={email}
               />
-              <Input
+              <FormInput
                 label="Password"
                 onChange={(event: any) => setPassword(event.target.value)}
                 id="password"
